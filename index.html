@@ -292,7 +292,25 @@
     }
 
     .fline.on {
-      background: rgba(56, 189, 248, .3);
+      background: linear-gradient(90deg, var(--ln) 0%, var(--a) 50%, var(--ln) 100%);
+      background-size: 200% 100%;
+      animation: flowLine 3s linear infinite;
+    }
+
+    @keyframes flowLine {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    @keyframes pulseBox {
+      0%, 100% { border-color: rgba(56, 189, 248, .4); box-shadow: 0 0 0px var(--ag); }
+      50% { border-color: var(--a); box-shadow: 0 0 15px var(--ag); }
+    }
+
+    .fb.on {
+      border-color: rgba(56, 189, 248, .5);
+      background: var(--ag);
+      animation: pulseBox 2s ease-in-out infinite;
     }
 
     .code-block {
@@ -817,6 +835,39 @@
       .infra-grid {
         grid-template-columns: 1fr;
         gap: 36px;
+      }
+
+      /* Fluxo vertical no mobile */
+      .flow {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        margin-top: 40px;
+      }
+
+      .fn {
+        flex-direction: row;
+        text-align: left;
+        gap: 20px;
+        min-width: auto;
+      }
+
+      .fline {
+        width: 1px;
+        height: 24px;
+        min-height: 24px;
+        margin-left: 31px; /* Alinhado ao centro do box de 62px */
+      }
+
+      .fline.on {
+        background: linear-gradient(180deg, var(--ln) 0%, var(--a) 50%, var(--ln) 100%);
+        background-size: 100% 200%;
+        animation: flowLineVert 3s linear infinite;
+      }
+
+      @keyframes flowLineVert {
+        0% { background-position: 0 200%; }
+        100% { background-position: 0 -200%; }
       }
     }
 
