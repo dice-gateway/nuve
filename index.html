@@ -477,9 +477,19 @@
     }
 
     /* Tabela do simulador */
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin-top: 36px;
+      border-bottom: 1px solid var(--ln);
+      padding-bottom: 8px;
+    }
+
     .tpv {
       width: 100%;
       border-collapse: collapse;
+      min-width: 800px;
     }
 
     .tpv th {
@@ -1190,52 +1200,54 @@
         real</div>
 
       <!-- Tabela reativa -->
-      <table class="tpv fade" style="margin-top:36px" id="sim-table">
-        <thead>
-          <tr>
-            <th>Cenário</th>
-            <th>TPV / Mês</th>
-            <th>Pedidos / Mês</th>
-            <th>Taxa %</th>
-            <th>Fee Fixo</th>
-            <th>RECEITA TOTAL</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1 restaurante</td>
-            <td>R$200.000</td>
-            <td>3.250</td>
-            <td id="r1-pct">—</td>
-            <td id="r1-fix">—</td>
-            <td class="total-cell" id="r1-tot">—</td>
-          </tr>
-          <tr>
-            <td>10 restaurantes</td>
-            <td>R$2.000.000</td>
-            <td>32.500</td>
-            <td id="r2-pct">—</td>
-            <td id="r2-fix">—</td>
-            <td class="total-cell" id="r2-tot">—</td>
-          </tr>
-          <tr>
-            <td>100 restaurantes</td>
-            <td>R$20.000.000</td>
-            <td>325.000</td>
-            <td id="r3-pct">—</td>
-            <td id="r3-fix">—</td>
-            <td class="total-cell" id="r3-tot">—</td>
-          </tr>
-          <tr class="big-row">
-            <td>1.000 restaurantes</td>
-            <td class="total-big">R$200.000.000</td>
-            <td style="color:var(--t1);font-weight:600">3.250.000</td>
-            <td id="r4-pct">—</td>
-            <td id="r4-fix">—</td>
-            <td class="total-cell total-big" id="r4-tot">—</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="table-container fade">
+        <table class="tpv" id="sim-table">
+          <thead>
+            <tr>
+              <th>Cenário</th>
+              <th>TPV / Mês</th>
+              <th>Pedidos / Mês</th>
+              <th>Taxa %</th>
+              <th>Fee Fixo</th>
+              <th>RECEITA TOTAL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1 restaurante</td>
+              <td>R$200.000</td>
+              <td>3.250</td>
+              <td id="r1-pct">—</td>
+              <td id="r1-fix">—</td>
+              <td class="total-cell" id="r1-tot">—</td>
+            </tr>
+            <tr>
+              <td>10 restaurantes</td>
+              <td>R$2.000.000</td>
+              <td>32.500</td>
+              <td id="r2-pct">—</td>
+              <td id="r2-fix">—</td>
+              <td class="total-cell" id="r2-tot">—</td>
+            </tr>
+            <tr>
+              <td>100 restaurantes</td>
+              <td>R$20.000.000</td>
+              <td>325.000</td>
+              <td id="r3-pct">—</td>
+              <td id="r3-fix">—</td>
+              <td class="total-cell" id="r3-tot">—</td>
+            </tr>
+            <tr class="big-row">
+              <td>1.000 restaurantes</td>
+              <td class="total-big">R$200.000.000</td>
+              <td style="color:var(--t1);font-weight:600">3.250.000</td>
+              <td id="r4-pct">—</td>
+              <td id="r4-fix">—</td>
+              <td class="total-cell total-big" id="r4-tot">—</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       <p style="font-family:var(--mono);font-size:.6rem;color:var(--t3);margin-top:14px">
         * 1.000 restaurantes com faturamento médio R$200k/mês · ticket médio R$61,54
       </p>
